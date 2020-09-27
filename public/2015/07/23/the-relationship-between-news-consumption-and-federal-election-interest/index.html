@@ -62,7 +62,7 @@
 
   <article class="article">
     
-    <span class="article-duration">1 min read</span>
+    <span class="article-duration">7 min read</span>
     
 
     <h1 class="article-title">The Relationship Between News Consumption and Federal Election Interest</h1>
@@ -81,51 +81,106 @@
 </div>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>We use <span class="citation">Wickham et al. (2019)</span>.</p>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
+<p>The 2015 Canadian federal election was held October 19, 2015. Liberal party leader, Justin Trudeau, ended the nine-year reign of Stephen Harper to become the 23rd Canadian Prime Minister (Zurcher, 2015). The Canadian Election Study (CES) is a survey conducted to examine Canadians’ opinions regarding political parties, election campaigns and party leaders (Northrup, 2016). This study has been an integral part of Canadian democracy research since 1965 (Fournier, 2015).</p>
+<p>As per reports, voter turnout increased 7.2 percent from 2011 to 2015, marking the largest rise in turnout since 1900 (Voter Turnout). I am interested in exploring whether surveys of Canadians’ political interest correlate with this increase in voter turnout in the 2015 election. Additionally, I would like to follow up by exploring whether news consumption could be a factor for the distribution of interest in the 2015 Canadian federal election.</p>
+<p>In order to investigate these properties, I will graph two survey results from the 2015 CES. The first is the distribution of interest in the 2015 federal election. The second graphed result is the distribution of news consumption in the 2015 CES. I will be comparing their distributive properties to see if there is a correlation between news consumption and interest in the federal election.</p>
+<p>I hypothesize that:</p>
+<ol style="list-style-type: decimal">
+<li>The distribution of interest in the 2015 federal election will represent a right-skewed distribution. The null hypothesis is that the distribution of interest in the 2015 federal election will not represent a right-skewed distribution.</li>
+<li>The distributions of news consumption and interest in the federal election will both be right skewed. The null hypothesis is that both the distributions of news consumption and interest in the federal election will not be right-skewed.</li>
+</ol>
+</div>
+<div id="graphs" class="section level1">
+<h1>Graphs</h1>
+<pre class="r"><code>install.packages(&quot;tidyverse&quot;)
+## Installing package into &#39;/home/rstudio-user/R/x86_64-pc-linux-gnu-library/4.0&#39;
+## (as &#39;lib&#39; is unspecified)
+
+install.packages(&quot;devtools&quot;) 
+## Installing package into &#39;/home/rstudio-user/R/x86_64-pc-linux-gnu-library/4.0&#39;
+## (as &#39;lib&#39; is unspecified)
+devtools::install_github(&quot;hodgettsp/cesR&quot;)
+## Skipping install of &#39;cesR&#39; from a github remote, the SHA1 (7c780beb) has not changed since last install.
+##   Use `force = TRUE` to force installation
+
+library(tidyverse)
+## ── Attaching packages ──────────────────────────────── tidyverse 1.3.0 ──
+## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0
+## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+library(cesR)
+library(labelled)
+
+get_ces(&quot;ces2015_web&quot;)
+## TO CITE THIS SURVEY FILE: Fournier, Patrick, Fred Cutler, Stuart Soroka and Dietlind Stolle. 2015. The 2015 Canadian Election Study. [dataset]
 ## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
+## LINK: https://ces-eec.arts.ubc.ca/english-section/surveys/
+
+ces2015_web &lt;- to_factor(ces2015_web)</code></pre>
+<pre class="r"><code>p &lt;- ces2015_web %&gt;% 
+  ggplot(aes(x = p_mediatim)) + 
+  geom_bar()
+
+d &lt;- p + ggtitle(&quot;Distribution of News Consumption in 2015 CES&quot;) + xlab(&quot;Dialy Time Spent&quot;) + ylab(&quot;Individuals&quot;)
+
+d &lt;- d + theme_grey(base_size = 8)
+plot(d)</code></pre>
+<p><img src="../../../../post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>In this graph, the distribution of news consumption in the 2015 CES follows a normal distribution. The largest portion of individuals spend 30-60 minutes watching, reading and listening to the news. In addition, over 3000 individuals chose not to answer this survey question.</p>
+<pre class="r"><code>a &lt;- ces2015_web %&gt;% 
+  ggplot(aes(x = interest)) + 
+  geom_bar()
+
+b &lt;- a + ggtitle(&quot;Distribution of Federal Election Interest in 2015 CES&quot;) + xlab(&quot;Level of Interest&quot;) + ylab(&quot;Individuals&quot;)
+
+b &lt;- b + theme_grey(base_size = 8)
+plot(b)</code></pre>
+<p><img src="../../../../post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>In this graph, we find that the distribution of federal election interest in the 2015 CES follows a right-skewed distribution. Approximately 3500 individuals reported interest levels between 7-10 out of 10. In addition, 500 individuals chose not to answer this survey question.</p>
 </div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span id="fig:pie"></span>
-<img src="../../../../post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
+<p>We reject the null hypothesis that the distribution of interest in the 2015 federal election will not represent a right-skewed distribution. As Elections Canada has found, voting in the election and political interest are, in fact, related (Explaining the Turnout). This is further exemplified in the graph of the distribution of federal election interest. The right-skewed nature of this graph shows that the majority of individuals reported between 7-10 level of interest in the upcoming election. This high level of interest could be a reason as to why there was a reported 7.4 percent increase in voter turnout from 2011 to 2015. According to Elections Canada, 16.1 percent of individuals who did not vote in the election cited a lack of interest as the catalyst for their decision (Explaining the Turnout). Therefore, interest is a large contributing factor to voter turnout.</p>
+<p>We fail to reject the null hypothesis that both the distributions of news consumption and interest in the federal election will not be right-skewed. As seen in the two graphs above, the distributive properties of these two data sets do not line up. While news consumption follows a normal distribution, the interest levels in the election follow a right-skewed distribution. This may suggest that higher number of hours spent watching, reading or listening to the news is not correlated with higher levels of interest in the election.</p>
 </div>
+<div id="weaknesses" class="section level1">
+<h1>Weaknesses</h1>
+<p>The main limitations of this work include the following:</p>
+<ol style="list-style-type: decimal">
+<li>Considerable amount of “Not Answered” and “Refuse to Answer” results in both the Interest and News Consumption charts. Individuals seem unwilling to answer certain questions.</li>
+<li>There could be confounding factors that contribute noise to the data in the CES. For instance, the CES study included attention-based questions that told the subjects what answer to respond with. However, these questions were not answered with 100 percent coherence. Thus, it can be extrapolated that not all subjects were answering with complete attention and consistency to the study.</li>
+<li>There could be human error in writing the code in R to create the graphs used in this report.</li>
+</ol>
 </div>
-<div id="references" class="section level1 unnumbered">
+<div id="next-steps" class="section level1">
+<h1>Next Steps</h1>
+<p>The future steps would be the following:</p>
+<ol style="list-style-type: decimal">
+<li>Reducing the number of potential response answers (Reference as to why this is beneficial). Some individuals might lose their patience reading through a thorough survey, such as the CES, and thus resort to simple “NA” answers. To mitigate for this, researchers can limit their potential answers to individual questions to under five possible answers. In addition, reducing the overall question count may increase the response rate to certain questions.<br />
+</li>
+<li>It may be insightful to perform a follow-up multi-variable study looking into the various factors that led to the increase in voter turnout from 2011 to 2015. As a result, it will be possible to see how much federal election interest has affected this increase in voters during this period.<br />
+</li>
+<li>Researchers should examine what factors persuade an individual to be more interested in a federal election. Unlike I initially hypothesize, news consumption does not seem to be an indicator of interest levels for Canadians.</li>
+<li>It would be particularly interesting to compare the distributions of interest levels in the 2015 Canadian federal election to previous years to see what sort of trend has been occurring over the years. Likewise, it would be interesting to break down the different forms of news consumption (ie. paper, electronic, etc.) and see how their consumption has been trending over the past couple decades as technology has advanced.</li>
+</ol>
+</div>
+<div id="references" class="section level1">
 <h1>References</h1>
-<div id="refs" class="references">
-<div id="ref-citetidyverse">
-<p>Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.</p>
-</div>
-</div>
+<ol style="list-style-type: decimal">
+<li>Zurcher, Anthony. “Trudeau Brings Liberals Back on Top.” BBC News, BBC, 20 Oct. 2015, www.bbc.com/news/world-us-canada-34566369.</li>
+<li>Northrup, David. “The 2015 Canadian Election Study.” Toronto, Ontario, Canada: The Institute for Social Research, York University (2016).</li>
+<li>Fournier, Patrick, Fred Cutler, Stuart Soroka and Dietlind Stolle. 2015. The 2015 Canadian Election Study. [dataset]</li>
+<li>Explaining the Turnout Decline in Canadian Federal Elections: A New Survey of Non-voters. Elections Canada. Accessed September 26, 2020. <a href="https://www.elections.ca/content.aspx?section=res&amp;dir=rec/part/tud&amp;document=interest&amp;lang=e" class="uri">https://www.elections.ca/content.aspx?section=res&amp;dir=rec/part/tud&amp;document=interest&amp;lang=e</a></li>
+<li>Voter Turnout at Federal Elections and Referendums. Elections Canada. Accessed September 26, 2020. <a href="https://www.elections.ca/content.aspx?section=ele&amp;dir=turn&amp;document=index&amp;lang=e" class="uri">https://www.elections.ca/content.aspx?section=ele&amp;dir=turn&amp;document=index&amp;lang=e</a></li>
+<li>Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little Easier.. R package version 0.1.0.</li>
+<li>Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make Developing R Packages Easier. <a href="https://devtools.r-lib.org/,https://github.com/r-lib/devtools" class="uri">https://devtools.r-lib.org/,https://github.com/r-lib/devtools</a>.</li>
+<li>R Core Team (2020). R: A language and environment for statistical computing. R, Foundation for Statistical Computing, Vienna, Austria. URL, <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</li>
+<li>JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2020). rmarkdown: Dynamic Documents for R. R package version 2.3. URL <a href="https://rmarkdown.rstudio.com" class="uri">https://rmarkdown.rstudio.com</a>.</li>
+</ol>
 </div>
 
     </div>
