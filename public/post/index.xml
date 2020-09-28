@@ -23,8 +23,7 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/2015/07/23/the-relationship-between-news-consumption-and-federal-election-interest/</guid>
-      <description>Abstract My abstract.
- Introduction The 2015 Canadian federal election was held October 19, 2015. Liberal party leader, Justin Trudeau, ended the nine-year reign of Stephen Harper to become the 23rd Canadian Prime Minister (Zurcher, 2015). The Canadian Election Study (CES) is a survey conducted to examine Canadians’ opinions regarding political parties, election campaigns and party leaders (Northrup, 2016). This study has been an integral part of Canadian democracy research since 1965 (Fournier, 2015).</description>
+      <description>Abstract In this paper, I looked into the distibutions of news consumption and election interest in the 2015 Canadian Election Study. Using R, I was able to graph these results and examine their distributive properties. I hypothesized that the distributions of news consumption and interest in the federal election will both be right skewed. As a result of examining the graphs, I concluded that the distribution of federal election interest was right skewed, whereas, the distribution of news consumption followed a normal distribution.</description>
     </item>
     
     <item>
