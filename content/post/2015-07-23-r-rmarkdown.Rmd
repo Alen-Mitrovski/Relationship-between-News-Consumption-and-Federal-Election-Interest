@@ -1,7 +1,7 @@
 ---
 title: "The Relationship Between News Consumption and Federal Election Interest"
 author: "Alen Mitrovski"
-date: 2015-07-23T21:13:14-05:00
+date: 2020-09-23T21:13:14-05:00
 bibliography: "references.bib" 
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
@@ -12,9 +12,11 @@ tags: ["R Markdown", "plot", "regression"]
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
+# Author: Alen Mitrovski
+
 # Abstract
 
-In this paper, I looked into the distibutions of news consumption and election interest in the 2015 Canadian Election Study. Using R, I was able to graph these results and examine their distributive properties. I hypothesized that the distributions of news consumption and interest in the federal election will both be right skewed. As a result of examining the graphs, I concluded that the distribution of federal election interest was right skewed, whereas, the distribution of news consumption followed a normal distribution.
+In this paper, I looked into the distributions of news consumption and election interest in the 2015 Canadian Election Study. Using R, I was able to graph these results and examine their distributive properties. I hypothesized that the distributions of news consumption and interest in the federal election will both be right skewed. As a result of examining the graphs, I concluded that the distribution of federal election interest was right skewed, whereas, the distribution of news consumption followed a normal distribution.
 
 # Introduction
 
@@ -27,7 +29,7 @@ In order to investigate these properties, I will graph two survey results from t
 I hypothesize that:
   
   1.	The distribution of interest in the 2015 federal election will represent a right-skewed distribution. The null hypothesis is that the distribution of interest in the 2015 federal election will not represent a right-skewed distribution. 
-  2.	The distributions of news consumption and interest in the federal election will both be right skewed. The null hypothesis is that both the distributions of news consumption and interest in the federal election will not be right-skewed. 
+  2.	The distribution of news consumption in the 2015 CES will represent a right-skewed distribution. The null hypothesis is that the distribution of news consumption in the 2015 CES  will not represent a right-skewed distribution. 
   
 # Graphs
 
@@ -76,9 +78,10 @@ In this graph, we find that the distribution of federal election interest in the
   
 # Discussion
 
-We reject the null hypothesis that the distribution of interest in the 2015 federal election will not represent a right-skewed distribution. As Elections Canada has found, voting in the election and political interest are, in fact, related (Explaining the Turnout). This is further exemplified in the graph of the distribution of federal election interest. The right-skewed nature of this graph shows that the majority of individuals reported between 7-10 level of interest in the upcoming election. This high level of interest could be a reason as to why there was a reported 7.4 percent increase in voter turnout from 2011 to 2015. According to Elections Canada, 16.1 percent of individuals who did not vote in the election cited a lack of interest as the catalyst for their decision (Explaining the Turnout). Therefore, interest is a large contributing factor to voter turnout. 
+Through the graphical evidence, we reject the null hypothesis that the distribution of interest in the 2015 federal election will not represent a right-skewed distribution. As Elections Canada has found, voting in the election and political interest are, in fact, related (Explaining the Turnout). This is further exemplified in the graph of the distribution of federal election interest. The right-skewed nature of this graph shows that the majority of individuals reported between 7-10 level of interest in the upcoming election. This high level of interest could be a reason as to why there was a reported 7.4 percent increase in voter turnout from 2011 to 2015. According to Elections Canada, 16.1 percent of individuals who did not vote in the election cited a lack of interest as the catalyst for their decision (Explaining the Turnout). Therefore, interest is a large contributing factor to voter turnout. 
 
-We fail to reject the null hypothesis that both the distributions of news consumption and interest in the federal election will not be right-skewed. As seen in the two graphs above, the distributive properties of these two data sets do not line up. While news consumption follows a normal distribution, the interest levels in the election follow a right-skewed distribution. This may suggest that higher number of hours spent watching, reading or listening to the news is not correlated with higher levels of interest in the election.
+We fail to reject the null hypothesis that the distribution of news consumption in the 2015 CES will not represent a right-skewed distribution. I had initially believed that the high levels of interest surrounding this 2015 election could be contributed to a high volume of daily news consumption. However, as seen in the two graphs above, the distributive properties of these two data sets do not line up. While news consumption follows a normal distribution, the interest levels in the election follow a right-skewed distribution. This may suggest that higher number of hours spent watching, reading or listening to the news is not correlated with higher levels of interest in the election. Curtis et al. had previously concluded that there is a positive correlation between age and political interest for Canadians (Curtis, 1976). However, thus far, there is not much research in the subject of election interest. 
+
 
 # Weaknesses
 
@@ -99,13 +102,14 @@ The future steps would be the following:
 
 # References
 
-1.	Zurcher, Anthony. “Trudeau Brings Liberals Back on Top.” BBC News, BBC, 20 Oct. 2015, www.bbc.com/news/world-us-canada-34566369.
+  1.	Zurcher, Anthony. “Trudeau Brings Liberals Back on Top.” BBC News, BBC, 20 Oct. 2015, www.bbc.com/news/world-us-canada-34566369.
   2.	Northrup, David. "The 2015 Canadian Election Study." Toronto, Ontario, Canada: The Institute for Social Research, York University (2016).
   3.	Fournier, Patrick, Fred Cutler, Stuart Soroka and Dietlind Stolle. 2015. The 2015 Canadian Election Study. [dataset]
   4.	Explaining the Turnout Decline in Canadian Federal Elections: A New Survey of Non-voters. Elections Canada. Accessed September 26, 2020. https://www.elections.ca/content.aspx?section=res&dir=rec/part/tud&document=interest&lang=e
   5.	Voter Turnout at Federal Elections and Referendums. Elections Canada. Accessed September 26, 2020. https://www.elections.ca/content.aspx?section=ele&dir=turn&document=index&lang=e
-  6.	Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little Easier.. R package version 0.1.0.
-  7.	Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make Developing R Packages Easier. https://devtools.r-lib.org/,https://github.com/r-lib/devtools.
-  8.	R Core Team (2020). R: A language and environment for statistical computing. R, Foundation for Statistical Computing, Vienna, Austria. URL, https://www.R-project.org/.
-  9.	JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2020). rmarkdown: Dynamic Documents for R. R package version 2.3. URL https://rmarkdown.rstudio.com.
+  6.	Curtis, James E., and Ronald D. Lambert. “Voting, Election Interest, and Age: National Findings for English and French Canadians.” Canadian Journal of Political Science, vol. 9, no. 2, 1976, pp. 293–307., doi:10.1017/s0008423900043730.
+  7.	Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little Easier.. R package version 0.1.0.
+  8.	Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make Developing R Packages Easier. https://devtools.r-lib.org/,https://github.com/r-lib/devtools.
+  9.	R Core Team (2020). R: A language and environment for statistical computing. R, Foundation for Statistical Computing, Vienna, Austria. URL, https://www.R-project.org/.
+  10.	JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone (2020). rmarkdown: Dynamic Documents for R. R package version 2.3. URL https://rmarkdown.rstudio.com.
 
