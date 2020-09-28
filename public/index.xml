@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Relationship Between News Consumption and Federal Election Interest</title>
-      <link>/2020/09/23/the-relationship-between-news-consumption-and-federal-election-interest/</link>
+      <title>News Consumption and Federal Election Interest in 2015 CES</title>
+      <link>/2020/09/23/news-consumption-and-federal-election-interest-in-2015-ces/</link>
       <pubDate>Wed, 23 Sep 2020 21:13:14 -0500</pubDate>
       
-      <guid>/2020/09/23/the-relationship-between-news-consumption-and-federal-election-interest/</guid>
+      <guid>/2020/09/23/news-consumption-and-federal-election-interest-in-2015-ces/</guid>
       <description>Author: Alen Mitrovski  Abstract In this paper, I looked into the distributions of news consumption and election interest in the 2015 Canadian Election Study. Using R, I was able to graph these results and examine their distributive properties. I hypothesized that the distributions of news consumption and interest in the federal election will both be right skewed. As a result of examining the graphs, I concluded that the distribution of federal election interest was right skewed, whereas, the distribution of news consumption followed a normal distribution.</description>
     </item>
     

@@ -1,5 +1,5 @@
 ---
-title: "The Relationship Between News Consumption and Federal Election Interest"
+title: "News Consumption and Federal Election Interest in 2015 CES"
 author: "Alen Mitrovski"
 date: 2020-09-23T21:13:14-05:00
 bibliography: "references.bib" 

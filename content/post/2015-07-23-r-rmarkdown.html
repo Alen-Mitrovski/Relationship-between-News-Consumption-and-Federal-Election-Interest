@@ -1,5 +1,5 @@
 ---
-title: "The Relationship Between News Consumption and Federal Election Interest"
+title: "News Consumption and Federal Election Interest in 2015 CES"
 author: "Alen Mitrovski"
 date: 2020-09-23T21:13:14-05:00
 bibliography: "references.bib" 
@@ -42,12 +42,12 @@ devtools::install_github(&quot;hodgettsp/cesR&quot;)
 ##   Use `force = TRUE` to force installation
 
 library(tidyverse)
-## ── Attaching packages ──────────────────────────────── tidyverse 1.3.0 ──
+## ── Attaching packages ───────────────────────────────── tidyverse 1.3.0 ──
 ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
 ## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
 ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
 ## ✓ readr   1.3.1     ✓ forcats 0.5.0
-## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ──────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()
 library(cesR)
@@ -82,8 +82,8 @@ plot(b)</code></pre>
 </div>
 <div id="discussion" class="section level1">
 <h1>Discussion</h1>
-<p>We reject the null hypothesis that the distribution of interest in the 2015 federal election will not represent a right-skewed distribution. As Elections Canada has found, voting in the election and political interest are, in fact, related (Explaining the Turnout). This is further exemplified in the graph of the distribution of federal election interest. The right-skewed nature of this graph shows that the majority of individuals reported between 7-10 level of interest in the upcoming election. This high level of interest could be a reason as to why there was a reported 7.4 percent increase in voter turnout from 2011 to 2015. According to Elections Canada, 16.1 percent of individuals who did not vote in the election cited a lack of interest as the catalyst for their decision (Explaining the Turnout). Therefore, interest is a large contributing factor to voter turnout.</p>
-<p>We fail to reject the null hypothesis that the distribution of news consumption in the 2015 CES will not represent a right-skewed distribution. As seen in the two graphs above, the distributive properties of these two data sets do not line up. While news consumption follows a normal distribution, the interest levels in the election follow a right-skewed distribution. This may suggest that higher number of hours spent watching, reading or listening to the news is not correlated with higher levels of interest in the election.</p>
+<p>Through the graphical evidence, we reject the null hypothesis that the distribution of interest in the 2015 federal election will not represent a right-skewed distribution. As Elections Canada has found, voting in the election and political interest are, in fact, related (Explaining the Turnout). This is further exemplified in the graph of the distribution of federal election interest. The right-skewed nature of this graph shows that the majority of individuals reported between 7-10 level of interest in the upcoming election. This high level of interest could be a reason as to why there was a reported 7.4 percent increase in voter turnout from 2011 to 2015. According to Elections Canada, 16.1 percent of individuals who did not vote in the election cited a lack of interest as the catalyst for their decision (Explaining the Turnout). Therefore, interest is a large contributing factor to voter turnout.</p>
+<p>We fail to reject the null hypothesis that the distribution of news consumption in the 2015 CES will not represent a right-skewed distribution. I had initially believed that the high levels of interest surrounding this 2015 election could be contributed to a high volume of daily news consumption. However, as seen in the two graphs above, the distributive properties of these two data sets do not line up. While news consumption follows a normal distribution, the interest levels in the election follow a right-skewed distribution. This may suggest that higher number of hours spent watching, reading or listening to the news is not correlated with higher levels of interest in the election. Curtis et al. had previously concluded that there is a positive correlation between age and political interest for Canadians (Curtis, 1976). However, thus far, there is not much research in the subject of election interest.</p>
 </div>
 <div id="weaknesses" class="section level1">
 <h1>Weaknesses</h1>
@@ -114,6 +114,7 @@ plot(b)</code></pre>
 <li>Fournier, Patrick, Fred Cutler, Stuart Soroka and Dietlind Stolle. 2015. The 2015 Canadian Election Study. [dataset]</li>
 <li>Explaining the Turnout Decline in Canadian Federal Elections: A New Survey of Non-voters. Elections Canada. Accessed September 26, 2020. <a href="https://www.elections.ca/content.aspx?section=res&amp;dir=rec/part/tud&amp;document=interest&amp;lang=e" class="uri">https://www.elections.ca/content.aspx?section=res&amp;dir=rec/part/tud&amp;document=interest&amp;lang=e</a></li>
 <li>Voter Turnout at Federal Elections and Referendums. Elections Canada. Accessed September 26, 2020. <a href="https://www.elections.ca/content.aspx?section=ele&amp;dir=turn&amp;document=index&amp;lang=e" class="uri">https://www.elections.ca/content.aspx?section=ele&amp;dir=turn&amp;document=index&amp;lang=e</a></li>
+<li>Curtis, James E., and Ronald D. Lambert. “Voting, Election Interest, and Age: National Findings for English and French Canadians.” Canadian Journal of Political Science, vol. 9, no. 2, 1976, pp. 293–307., <a href="doi:10.1017/s0008423900043730" class="uri">doi:10.1017/s0008423900043730</a>.</li>
 <li>Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little Easier.. R package version 0.1.0.</li>
 <li>Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make Developing R Packages Easier. <a href="https://devtools.r-lib.org/,https://github.com/r-lib/devtools" class="uri">https://devtools.r-lib.org/,https://github.com/r-lib/devtools</a>.</li>
 <li>R Core Team (2020). R: A language and environment for statistical computing. R, Foundation for Statistical Computing, Vienna, Austria. URL, <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</li>
