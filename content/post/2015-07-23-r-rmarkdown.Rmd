@@ -13,7 +13,8 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # Abstract
-My abstract. 
+
+In this paper, I looked into the distibutions of news consumption and election interest in the 2015 Canadian Election Study. Using R, I was able to graph these results and examine their distributive properties. I hypothesized that the distributions of news consumption and interest in the federal election will both be right skewed. As a result of examining the graphs, I concluded that the distribution of federal election interest was right skewed, whereas, the distribution of news consumption followed a normal distribution.
 
 # Introduction
 
